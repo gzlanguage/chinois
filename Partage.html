@@ -1,1 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title translate="no">G-Z</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5; /* 明亮的背景颜色 */
+            color: var(--text-color);
+            font-family: 'Roboto', Arial, sans-serif; /* 使用相似的字体 */
+            padding: 20px;
+            margin: 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .header {
+            font-size: 1.8em;
+            font-family: 'Billabong', cursive;
+            color: #007BFF; /* 蓝色 */
+            border: 1.5px solid #007BFF; /* 蓝色边框 */
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 10px; /* 圆角边框 */
+        }
+        .divider {
+            height: 1px;
+            background-color: #007BFF; /* 边框颜色 */
+            width: 100%;
+            margin: 5px 0;
+        }
+        .short-divider {
+            width: 50%;
+            margin: 10px auto;
+        }
+        .content {
+            text-align: center;
+            margin-top: 60px;
+        }
+        h1, h2 {
+            margin-bottom: 5px;
+            font-size: 2em;
+            text-decoration: underline;
+            color: #007BFF; /* 蓝色 */
+        }
+        .social-message {
+            margin-top: 30px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* 图标之间的间距 */
+            margin-top: 20px;
+        }
+        .icon {
+            font-size: 30px; 
+            color: #007BFF; /* 蓝色 */
+            transition: color 0.3s;
+            border: 1px solid #007BFF; /* 蓝色边框 */
+            border-radius: 3px;
+            padding: 8px; 
+            background-color: rgba(0, 119, 190, 0.1); /* 浅背景 */
+            display: inline-block;
+        }
+        .icon:hover {
+            color: #005f8d; /* 悬停颜色 */
+            background-color: rgba(0, 119, 190, 0.2);
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 60px 0;
+        }
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #007BFF; /* 蓝色边框 */
+        }
+        .or-divider::before {
+            margin-right: 10px;
+        }
+        .or-divider::after {
+            margin-left: 10px;
+        }
+        .copy-message {
+            margin-top: 30px;
+        }
+        .copy-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 1px solid #007BFF; /* 蓝色边框 */
+            background-color: transparent;
+            color: #007BFF; /* 蓝色 */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .copy-button:hover {
+            background-color: rgba(0, 119, 190, 0.1);
+            color: white;
+        }
+        .copy-status {
+            margin-top: 10px;
+            color: #007BFF; /* 蓝色 */
+        }
+        .copyright {
+            margin-top: 40px;
+            color: darkgray;
+            font-size: 0.8em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="header-container">
+            <div class="header" translate="no"><strong>G-Z</strong></div>
+        </div>
+    </a>
 
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1>分享 GZ</h1>
+        <div class="short-divider"></div>
+        <p class="social-message">让我们发现我们是谁，以及我们如何归属这个世界！除了娱乐，让我们进一步了解我们的世代：</p>
+
+        <div class="social-icons">
+            <a href="https://www.g-z.online" target="_blank" class="icon" onclick="share('Facebook')">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?text=加入%20G-Z%20！%20一起发现我们世代的迷人秘密，体验激动人心的发现和娱乐时刻。成为这段独特冒险的一部分！%20🌟%20https://www.g-z.online" target="_blank" class="icon" onclick="share('WhatsApp')">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://telegram.me/share/url?url=https://www.g-z.online&text=加入%20G-Z%20！%20一起发现我们世代的迷人秘密，体验激动人心的发现和娱乐时刻。成为这段独特冒险的一部分！%20🌟" target="_blank" class="icon" onclick="share('Telegram')">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://www.g-z.online" target="_blank" class="icon" onclick="share('Twitter')">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.g-z.online" target="_blank" class="icon" onclick="share('WeChat')">
+                <i class="fab fa-weixin"></i>
+            </a>
+        </div>
+
+        <div class="or-divider">
+            <span style="color: #007BFF;">或者</span> <!-- 蓝色 -->
+        </div>
+
+        <p class="copy-message">复制分享链接：</p>
+        <button class="copy-button" onclick="copyLink()">复制</button>
+        <p class="copy-status" id="copyStatus"></p>
+    </div>
+
+    <div class="copyright">
+        &copy; 2025 <span translate="no">G-Z</span>. 保留所有权利。
+    </div>
+
+    <script>
+        const shareText = "加入 G-Z！一起发现我们世代的迷人秘密，体验激动人心的发现和娱乐时刻。成为这段独特冒险的一部分！🌟";
+        const shareLink = "https://www.g-z.online";
+
+        function copyLink() {
+            navigator.clipboard.writeText(shareLink).then(() => {
+                document.getElementById("copyStatus").innerText = "以下分享链接已复制到您的剪贴板：" + shareLink;
+            }).catch(err => {
+                console.error("复制文本时出错：", err);
+                document.getElementById("copyStatus").innerText = "复制文本时出错。";
+            });
+        }
+
+        function share(platform) {
+            let url;
+            switch (platform) {
+                case 'Facebook':
+                    url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareLink)}&quote=${encodeURIComponent(shareText)}`;
+                    break;
+                case 'WeChat':
+                    alert("在微信上分享通常通过应用进行。");
+                    return;
+                case 'Twitter':
+                    url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareLink)}&text=${encodeURIComponent(shareText)}`;
+                    break;
+                case 'WhatsApp':
+                    url = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}%20${encodeURIComponent(shareLink)}`;
+                    break;
+                case 'Telegram':
+                    url = `https://telegram.me/share/url?url=${encodeURIComponent(shareLink)}&text=${encodeURIComponent(shareText)}`;
+                    break;
+            }
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
