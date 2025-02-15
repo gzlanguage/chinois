@@ -1,1 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
 
+        header {
+            background-color: #ffffff;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.5em;
+            font-family: 'Billabong', cursive;
+            color: #007BFF;
+            border: 2px solid #007BFF;
+            padding: 3px;
+            border-radius: 5px;
+        }
+
+        .copyright-icon {
+            font-size: 0.6em;
+            color: #007BFF;
+            margin: 0 10px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #007BFF;
+            width: 100%;
+            margin: 2px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+            padding: 5px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 0 5px;
+            font-size: 0.8em;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .share-button {
+            background-color: #ffffff;
+            border: 1px solid #007BFF;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 10px;
+            padding: 5px;
+            color: #007BFF;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .share-button:hover {
+            background-color: #e9f5ff;
+        }
+
+        .category-select, .country-select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+            border-top: 3px solid #007BFF;
+        }
+
+        .dashboard {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            overflow: auto;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .card {
+            background: white;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: inherit;
+            border: 1px solid #007BFF;
+            transition: background 0.3s;
+        }
+
+        .small-card { height: 50px; }
+        .card:hover {
+            transform: translateY(-2px);
+            background: #e9f5ff;
+        }
+
+        .title { color: #666; font-size: 0.8rem; margin-bottom: 5px; }
+        .value { font-size: 1rem; font-weight: bold; color: #007BFF; }
+
+        @media (max-width: 500px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .title { font-size: 0.7rem; }
+            .value { font-size: 0.9rem; }
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 33% auto; 
+            padding: 15px; /* 减少内边距 */
+            border: 1px solid #007BFF; 
+            border-radius: 10px; /* 减少边角半径 */
+            width: 80%; 
+            max-width: 290px; /* 减少宽度 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            color: red; 
+            font-size: 20px; /* 减少字体大小 */
+            font-weight: bold;
+            display: block; 
+            text-align: center; 
+            margin-bottom: 10px; /* 减少外边距 */
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: darkred; 
+        }
+
+        .modal p {
+            color: #333; 
+            font-size: 0.9em; /* 减少字体大小 */
+            text-align: center; /* 文本居中 */
+        }
+
+        .support-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px; /* 减少内边距 */
+            cursor: pointer;
+            font-size: 0.9em; /* 减少字体大小 */
+            margin-top: 10px; /* 减少外边距 */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s;
+        }
+
+        .support-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwfLgPM_tz2aFW33ck5iF9SPSxpPpYSHU",
+            authDomain: "genz-9f218.firebaseapp.com",
+            databaseURL: "https://genz-9f218-default-rtdb.firebaseio.com",
+            projectId: "genz-9f218",
+            storageBucket: "genz-9f218.appspot.com",
+            messagingSenderId: "286958713700",
+            appId: "1:286958713700:web:29d878befaf6dd8c049871",
+            measurementId: "G-P0W7NB022J"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const auth = getAuth();
+
+        let allData = {}; // 存储全局数据
+
+        function fetchData() {
+            const birthdatesRef = ref(db, 'birthdates');
+            onValue(birthdatesRef, (snapshot) => {
+                allData = snapshot.val() || {}; // 将数据存储在全局变量中
+                console.log(allData); // 显示获取的数据
+                updateCountries(); // 更新可用国家
+                updateCards(); // 更新数据卡片
+            });
+        }
+
+        function updateCountries() {
+            const countrySelect = document.getElementById('countrySelect');
+            const countries = new Set();
+
+            // 从数据中获取唯一国家
+            Object.keys(allData).forEach(userId => {
+                const userData = allData[userId];
+                countries.add(userData.country); // 确保 'country' 是 userData 的属性
+            });
+
+            // 填充国家选择
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                countrySelect.appendChild(option);
+            });
+        }
+
+        function calculateAge(birthDate) {
+            const today = new Date();
+            const birth = new Date(birthDate);
+            let age = today.getFullYear() - birth.getFullYear();
+            const monthDiff = today.getMonth() - birth.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        function updateCards() {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = ''; // 清空当前内容
+
+            const selectedCountry = document.getElementById('countrySelect').value;
+            const selectedCategory = document.getElementById('categorySelect').value;
+
+            if (Object.keys(allData).length === 0) {
+                grid.innerHTML = '<p>未找到数据。</p>';
+                return;
+            }
+
+            const counts = {};
+
+            // 按类别计数
+            Object.keys(allData).forEach(userId => {
+                const userData = allData[userId];
+                if (userData.country === selectedCountry || selectedCountry === '') {
+                    let key;
+                    if (selectedCategory === 'daily') {
+                        key = new Date(userData.date).toLocaleDateString('zh-CN', { weekday: 'long' });
+                    } else if (selectedCategory === 'monthly') {
+                        key = new Date(userData.date).toLocaleDateString('zh-CN', { month: 'long' });
+                    } else if (selectedCategory === 'yearly') {
+                        key = new Date(userData.date).getFullYear();
+                    } else if (selectedCategory === 'gender') {
+                        key = userData.gender; // 对于 'gender' 类别
+                    } else if (selectedCategory === 'age') {
+                        key = calculateAge(userData.date); // 计算年龄
+                    } else if (selectedCategory === 'population') {
+                        key = userData.country; // 对于人口，使用国家
+                    }
+
+                    counts[key] = (counts[key] || 0) + 1;
+                }
+            });
+
+            // 显示卡片
+            Object.keys(counts).forEach(key => {
+                const card = document.createElement('div');
+                card.className = 'card small-card';
+                card.innerHTML = `<div class="title">${key}</div><div class="value">${counts[key]}</div>`;
+                grid.appendChild(card);
+            });
+
+            // 如果未找到数据
+            if (grid.innerHTML === '') {
+                grid.innerHTML = '<p>未找到数据。</p>';
+            }
+        }
+
+        // 防抖函数
+        function debounce(func, wait) {
+            let timeout;
+            return function(...args) {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(this, args), wait);
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const categorySelect = document.getElementById('categorySelect');
+            const countrySelect = document.getElementById('countrySelect');
+
+            countrySelect.addEventListener('change', debounce(updateCards, 300));
+            categorySelect.addEventListener('change', debounce(updateCards, 300));
+            fetchData(); // 启动时加载数据
+
+            // 打开支持模态框
+            document.getElementById('supportBtn').onclick = function() {
+                document.getElementById('supportModal').style.display = 'block';
+            };
+
+            // 打开FAQ模态框
+            document.getElementById('faqBtn').onclick = function() {
+                document.getElementById('faqModal').style.display = 'block';
+            };
+
+            // 关闭模态框
+            document.querySelectorAll('.close').forEach(closeButton => {
+                closeButton.onclick = function() {
+                    this.closest('.modal').style.display = 'none';
+                };
+            });
+
+            // 点击外部关闭模态框
+            window.onclick = function(event) {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            };
+
+            // 打开PayPal链接
+            document.getElementById('paypalBtn').onclick = function() {
+                window.location.href = 'https://www.paypal.com/ncp/payment/QN7HEGCSRYJKA';
+            };
+        });
+    </script>
+</head>
+<body>
+
+<header>
+    <a href="index.html" style="text-decoration: none;">
+        <h1 translate="no">GZ</h1>
+    </a>
+    <div class="copyright-icon">©️</div>
+    <a href="Partage.html">
+        <button class="share-button" aria-label="分享">
+            <i class="fas fa-share-alt"></i>
+        </button>
+    </a>
+</header>
+
+<div class="divider"></div>
+
+<div class="button-container">
+    <button id="faqBtn" class="button" aria-label="常见问题">
+        <i class="fas fa-question-circle" style="margin-right: 2px;"></i> 常见问题
+    </button>
+    <button id="supportBtn" class="button" aria-label="支持" translate="no">
+        <i class="fas fa-hand-holding-heart" style="margin-right: 5px;"></i> 支持
+    </button>
+</div>
+
+<div class="divider"></div>
+
+<div class="dashboard">
+    <select class="country-select" aria-label="选择国家" id="countrySelect">
+        <option value="">所有国家</option>
+        <!-- 国家选项将动态添加 -->
+    </select>
+
+    <select class="category-select" aria-label="选择类别" id="categorySelect">
+        <option value="daily">按日出生数</option>
+        <option value="monthly">按月出生数</option>
+        <option value="yearly">按年出生数</option>
+        <option value="gender">性别</option>
+        <option value="age">年龄</option>
+        <option value="population">人口</option> <!-- 添加人口选项 -->
+    </select>
+
+    <div class="grid" id="grid">
+        <!-- 卡片将在这里生成 -->
+    </div>
+</div>
+
+<!-- 支持模态框 -->
+<div id="supportModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>感谢您对G-Z的支持！每一份支持都是重要的。借助您的帮助，我们可以继续开发这个激动人心的项目，创造创新的分析，并为全球观众提供免费统计数据。</p>
+        <button id="paypalBtn" class="support-button">现在支持</button>
+    </div>
+</div>
+
+<!-- FAQ模态框 -->
+<div id="faqModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        统计数据会在每次提交到表格时自动更新。
+    </div>
+</div>
+</body>
+</html>
