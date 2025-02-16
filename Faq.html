@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5; /* 浅色背景 */
+            margin: 0;
+            padding: 0;
+            color: #333; /* 文字颜色 */
+            font-family: 'Roboto', Arial, sans-serif; /* 使用类似字体 */
+        }
+        header {
+            background-color: #ffffff; /* 白色背景 */
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2em; /* 调整字体大小 */
+            font-family: 'Billabong', cursive;
+            color: #007BFF; /* 蓝色 */
+        }
+        .logo-genz {
+            border: 1.5px solid #007BFF; /* 蓝色边框 */
+            padding: 3px 6px; /* 减少内边距 */
+            display: inline-block;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        .faq-button {
+            color: #007BFF; /* 蓝色 */
+            font-size: 0.9em; /* 减小字体大小 */
+            padding: 3px 6px; /* 减少内边距 */
+            border: 1px solid #007BFF; /* 蓝色边框 */
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            background-color: transparent; /* 透明背景 */
+            display: flex;
+            align-items: center; 
+        }
+        .divider {
+            height: 1px;
+            background-color: #007BFF; /* 蓝色边框 */
+            width: 100%;
+            margin-top: 0; /* 去掉上边距 */
+        }
+        .divider-text {
+            text-align: center;
+            color: #333; /* 文字颜色 */
+            font-size: 0.9em;
+            margin: 10px 0; 
+        }
+        .faq-content {
+            padding: 10px 20px; /* 减少上边距 */
+            font-size: 0.85em;
+        }
+        .faq-content h2 {
+            font-size: 1.2em; /* FAQ标题的字体大小 */
+        }
+        footer {
+            text-align: center;
+            color: #333; /* 文字颜色 */
+            margin: 20px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <h1 class="logo-genz" translate="no">GZ</h1>
+    </a>
+    <div style="display: flex; align-items: center;">
+        <div class="faq-button">FAQ</div>
+    </div>
+</header>
+
+<div class="divider"></div>
+<div class="divider-text">FAQ - 常见问题</div>
+<div class="divider"></div>
+
+<div class="faq-content">
+    <h2>1. GZ是什么？如何使用？</h2>
+    <p>G-Z是一个完全免费的网络应用程序，允许用户在无需注册的情况下提交自己的出生日期、出生国家和性别。它旨在生成关于出生的全球和国家统计数据，包括：</p>
+    <ul>
+        <li>按日、月、年统计的出生人数。</li>
+        <li>按国家、性别和年龄的分布。</li>
+    </ul>
+    <p>主要目的是提供可获取的人口统计数据，以便更好地理解全球人口趋势。</p>
+
+    <h2>2. 我的数据是匿名的吗？</h2>
+    <p>是的，您的数据是完全匿名的。我们设计G-Z是为了确保：</p>
+    <ul>
+        <li>没有数据能够追溯到单个用户。</li>
+        <li>我们不会收集可以识别谁提交了什么的信息。请放心，您的身份是受到保护的，您的数据会立即汇总。</li>
+    </ul>
+
+    <h2>3. 我如何知道我的数据是否已提交？</h2>
+    <p>一旦您的数据提交成功：</p>
+    <ul>
+        <li>提交按钮的颜色会改变：提交过程中为橙色，提交成功后为绿色。</li>
+        <li>按钮的文本将从“提交”变为“已提交”。</li>
+    </ul>
+    <p>这些指示器确认您的数据已被考虑。</p>
+
+    <h2>4. 我可以修改或删除我的提交吗？</h2>
+    <p>是的，您可以在提交后立即删除您的数据。以下是方法：</p>
+    <ul>
+        <li>提交后会出现一个重置图标。</li>
+        <li>点击该图标，您的数据将从我们的服务器中完全删除。</li>
+    </ul>
+    <p>但是，一旦您关闭应用程序或会话过期，数据将不可逆转地匿名化，无法修改或删除。请参阅我们的<a href="Confidentialité.html">隐私政策 '5'</a>以获取更多信息。</p>
+
+    <h2>5. 如果我提供错误的信息会怎样？</h2>
+    <p>我们鼓励您提交准确和经过验证的信息，以确保统计数据的质量。如果您在提交后发现错误：</p>
+    <ul>
+        <li>请使用重置图标删除您的数据。</li>
+        <li>然后您可以提交修正后的信息。</li>
+    </ul>
+
+    <h2>6. 为什么要支持GZ？</h2>
+    <p>尽管GZ是免费的，但我们需要您的支持以：</p>
+    <ul>
+        <li>覆盖服务器和基础设施的成本。</li>
+        <li>资助更深入的分析和未来的项目，使所有人受益。</li>
+        <li>确保应用程序及其功能的持续改进。</li>
+    </ul>
+    <p>您可以通过PayPal或其他捐赠方式支持我们的使命。</p>
+
+    <h2>7. 为什么要在社交媒体上关注GZ？</h2>
+    <p>通过关注我们在社交媒体上，您将能够：</p>
+    <ul>
+        <li>获得有关新分析和人口统计趋势的信息。</li>
+        <li>发现我们全球统计数据的定期更新。</li>
+        <li>参与关于全球人口的教育讨论。</li>
+    </ul>
+    <p>此外，我们会分享来自我们统计数据的有趣信息，并保持您对我们新项目的了解。</p>
+</div>
+
+<footer>
+    <p>©️ 2025 GZ</p>
+</footer>
+</body>
+</html>
