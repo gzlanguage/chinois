@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title translate="no">GZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Billabong&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5; /* 浅色背景 */
+            margin: 0;
+            padding: 0;
+            color: #333; /* 文字颜色 */
+            font-family: 'Roboto', Arial, sans-serif; /* 使用相似的字体 */
+        }
+        header {
+            background-color: #ffffff; /* 白色背景 */
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2em; /* 调整字体大小 */
+            font-family: 'Billabong', cursive;
+            color: #007BFF; /* 蓝色 */
+        }
+        .logo-genz {
+            border: 1.5px solid #007BFF; /* 蓝色边框 */
+            padding: 3px 6px; /* 减少填充 */
+            display: inline-block;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+        .conditions-button {
+            color: #007BFF; /* 蓝色 */
+            font-size: 0.9em; /* 减小字体大小 */
+            padding: 3px 6px; /* 减少填充 */
+            border: 1px solid #007BFF; /* 蓝色边框 */
+            border-radius: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            background-color: transparent; /* 透明背景 */
+            display: flex;
+            align-items: center; 
+        }
+        .divider {
+            height: 1px;
+            background-color: #007BFF; /* 蓝色分隔线 */
+            width: 100%;
+            margin-top: 0; /* 去掉上边距 */
+        }
+        .divider-text {
+            text-align: center;
+            color: #333; /* 文字颜色 */
+            font-size: 0.9em;
+            margin: 10px 0; 
+        }
+        .content {
+            padding: 10px 20px; /* 减少上方填充 */
+            font-size: 0.85em;
+        }
+        .content h2 {
+            font-size: 1.2em; /* 减小标题大小 */
+        }
+        footer {
+            text-align: center;
+            color: #333; /* 文字颜色 */
+            margin: 20px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <h1 class="logo-genz" translate="no">GZ</h1>
+    </a>
+    <div style="display: flex; align-items: center;">
+        <div class="conditions-button">隐私政策</div>
+    </div>
+</header>
+
+<div class="divider"></div>
+<div class="divider-text">隐私政策</div>
+<div class="divider"></div>
+
+<div class="content">
+    <p><strong>最后更新：31/01/2024。</strong></p>
+    <p>欢迎来到 GZ，这是一个专注于生成全球人口统计数据的网络应用。我们尊重并保护您的隐私。本隐私政策描述了我们收集的信息类型、使用方式、保护措施以及您作为用户的权利。</p>
+
+    <h2>1. 收集的信息</h2>
+    <p><strong>a) 自愿提供的信息</strong></p>
+    <p>使用我们的应用时，您可以自愿提供以下信息：</p>
+    <ul>
+        <li>出生日期</li>
+        <li>出生国家</li>
+        <li>性别</li>
+    </ul>
+    
+    <p><strong>b) 无自动收集</strong></p>
+    <p>我们不会自动收集数据（如 cookies 或浏览信息）。</p>
+
+    <h2>2. 信息的使用</h2>
+    <p>我们仅将您提供的信息用于：</p>
+    <ul>
+        <li>分析和生成关于出生的匿名统计信息（按日、月、年、国家、性别、年龄等）。</li>
+        <li>识别教育和历史目的的人口趋势。</li>
+    </ul>
+    <p>您的数据不会用于营销、广告或其他目的。</p>
+
+    <h2>3. 信息共享</h2>
+    <p>除非在以下严格必要的情况下，我们不会与第三方共享您的信息：</p>
+    <ul>
+        <li><strong>服务提供商：</strong> 我们使用 Google Cloud（Firebase）来托管您的数据，并使用 PayPal 来管理捐款。这些合作伙伴也承诺遵守严格的隐私标准。</li>
+        <li><strong>法律合规：</strong> 如果法律要求，我们可能会被迫披露您的数据以遵守法律义务。</li>
+    </ul>
+    <p>除上述情况外，您的数据不会被出售、租赁或与任何人共享。</p>
+
+    <h2>4. 数据存储和安全</h2>
+    <p>您的数据通过严格的措施进行保护，包括：</p>
+    <ul>
+        <li><strong>加密：</strong> 您的设备与我们的服务器之间的所有通信都通过 SSL/TLS 协议进行保护。</li>
+        <li><strong>安全托管：</strong> 您的数据存储在位于美国的 Google Cloud 安全服务器上，符合国际数据保护标准。</li>
+    </ul>
+    <p>我们还确保：</p>
+    <ul>
+        <li>提供的数据会立即进行聚合和匿名处理。</li>
+        <li>任何信息都无法追踪到单个用户。</li>
+    </ul>
+
+    <h2>5. 数据删除</h2>
+    <p>您对自己的数据拥有完全的控制权：</p>
+    <ul>
+        <li>提交后，会出现重置图标，允许您在会话激活时随时删除数据。</li>
+        <li>一旦会话结束或过期，您的数据将被不可逆转地匿名化，无法删除。</li>
+    </ul>
+    <p>我们将这些聚合数据保留用于长期研究和分析。然而，在发生重大问题或根据您的请求时，我们承诺删除所有收集的数据。</p>
+
+    <h2>6. Cookies 和类似技术</h2>
+    <p>我们不使用 cookies 或跟踪技术。</p>
+
+    <h2>7. 国际数据传输</h2>
+    <p>您的数据可能会被传输和存储在美国，我们的服务器就位于那里。我们确保所有数据均按照国际数据保护法律进行处理，并保持相同的安全级别。</p>
+
+    <h2>8. 保留期限</h2>
+    <p>我们将匿名数据无限期保留，以确保其对未来的人口统计分析有用。然而，任何可识别的数据在用户的活跃会话之外不会被保留。</p>
+
+    <h2>9. 本政策的变更</h2>
+    <p>我们可能会更新本隐私政策，以反映我们的做法或适用法律的变更。任何重大变更将通过我们的应用或电子邮件通知您。</p>
+
+    <h2>10. 联系方式</h2>
+    <p>如对本隐私政策有任何疑问或担忧，请联系我们：</p>
+    <p>电子邮件：admin@g-z.online</p>
+</div>
+
+<footer>
+    <p>©️ 2025 <span translate="no">GZ</span></p>
+</footer>
+
+</body>
+</html>
