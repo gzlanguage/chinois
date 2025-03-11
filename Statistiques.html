@@ -26,12 +26,12 @@
 
         h1 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.4em;
             font-family: 'Billabong', cursive;
             color: #007BFF;
             border: 2px solid #007BFF;
             padding: 3px;
-            border-radius: 5px;
+            border-radius: 10px;
         }
 
         .copyright-icon {
@@ -44,7 +44,7 @@
             height: 1px;
             background-color: #007BFF;
             width: 100%;
-            margin: 2px 0;
+            margin: 1.6px 0;
         }
 
         .button-container {
@@ -60,8 +60,8 @@
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 5px;
-            padding: 8px 15px;
+            border-radius: 8px;
+            padding: 6px 13px;
             margin: 0 5px;
             font-size: 0.8em;
             cursor: pointer;
@@ -78,7 +78,7 @@
         .share-button {
             background-color: #ffffff;
             border: 1px solid #007BFF;
-            border-radius: 10px;
+            border-radius: 9px;
             cursor: pointer;
             margin-left: 10px;
             padding: 5px;
@@ -93,10 +93,10 @@
 
         .category-select, .country-select {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 5px;
+            margin: 4px 0;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px;
             background: white;
             border-top: 3px solid #007BFF;
         }
@@ -104,7 +104,7 @@
         .dashboard {
             max-width: 800px;
             margin: auto;
-            padding: 20px;
+            padding: 8px;
         }
 
         .grid {
@@ -118,8 +118,8 @@
 
         .card {
             background: white;
-            padding: 8px;
-            border-radius: 8px;
+            padding: 6px;
+            border-radius: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
             color: inherit;
@@ -133,13 +133,13 @@
             background: #e9f5ff;
         }
 
-        .title { color: #666; font-size: 0.8rem; margin-bottom: 5px; }
+        .title { color: #666; font-size: 0.8rem; margin-bottom: 9px; }
         .value { font-size: 1rem; font-weight: bold; color: #007BFF; }
 
         @media (max-width: 500px) {
             .grid { grid-template-columns: repeat(2, 1fr); }
-            .title { font-size: 0.7rem; }
-            .value { font-size: 0.9rem; }
+            .title { font-size: 0.6rem; }
+            .value { font-size: 0.8rem; }
         }
 
         .modal {
@@ -156,22 +156,22 @@
 
         .modal-content {
             background-color: #fff;
-            margin: 33% auto; 
-            padding: 15px; /* 减少内边距 */
-            border: 1px solid #007BFF; 
-            border-radius: 10px; /* 减少边角半径 */
+            margin: 34% auto; 
+            padding: 14px;
+            border: 2px solid #007BFF; 
+            border-radius: 40px; 
             width: 80%; 
-            max-width: 290px; /* 减少宽度 */
+            max-width: 290px; 
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .close {
             color: red; 
-            font-size: 20px; /* 减少字体大小 */
+            font-size: 20px; 
             font-weight: bold;
             display: block; 
             text-align: center; 
-            margin-bottom: 10px; /* 减少外边距 */
+            margin-bottom: 10px; 
             cursor: pointer;
         }
 
@@ -181,19 +181,19 @@
 
         .modal p {
             color: #333; 
-            font-size: 0.9em; /* 减少字体大小 */
-            text-align: center; /* 文本居中 */
+            font-size: 0.8em; 
+            text-align: center; 
         }
 
         .support-button {
             background-color: #007BFF;
             color: white;
             border: none;
-            border-radius: 5px;
-            padding: 8px 12px; /* 减少内边距 */
+            border-radius: 10px;
+            padding: 8px 12px; 
             cursor: pointer;
-            font-size: 0.9em; /* 减少字体大小 */
-            margin-top: 10px; /* 减少外边距 */
+            font-size: 0.8em; 
+            margin-top: 10px; 
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -210,15 +210,15 @@
         import { getAuth } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyBwfLgPM_tz2aFW33ck5iF9SPSxpPpYSHU",
-            authDomain: "genz-9f218.firebaseapp.com",
-            databaseURL: "https://genz-9f218-default-rtdb.firebaseio.com",
-            projectId: "genz-9f218",
-            storageBucket: "genz-9f218.appspot.com",
-            messagingSenderId: "286958713700",
-            appId: "1:286958713700:web:29d878befaf6dd8c049871",
-            measurementId: "G-P0W7NB022J"
-        };
+  apiKey: "AIzaSyCrPKQOqw4zciASa_5PbI_etfkvrBaDPDI",
+  authDomain: "genz-abb36.firebaseapp.com",
+  databaseURL: "https://genz-abb36-default-rtdb.firebaseio.com",
+  projectId: "genz-abb36",
+  storageBucket: "genz-abb36.firebasestorage.app",
+  messagingSenderId: "405021535683",
+  appId: "1:405021535683:web:ee5a28fde27f5558046176",
+  measurementId: "G-XZNQND2J00"
+};
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
@@ -229,10 +229,10 @@
         function fetchData() {
             const birthdatesRef = ref(db, 'birthdates');
             onValue(birthdatesRef, (snapshot) => {
-                allData = snapshot.val() || {}; // 将数据存储在全局变量中
+                allData = snapshot.val() || {}; // 存储数据到全局变量
                 console.log(allData); // 显示获取的数据
                 updateCountries(); // 更新可用国家
-                updateCards(); // 更新数据卡片
+                updateCards(); // 用数据更新卡片
             });
         }
 
@@ -246,7 +246,7 @@
                 countries.add(userData.country); // 确保 'country' 是 userData 的属性
             });
 
-            // 填充国家选择
+            // 填充国家选择列表
             countries.forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
@@ -268,7 +268,7 @@
 
         function updateCards() {
             const grid = document.getElementById('grid');
-            grid.innerHTML = ''; // 清空当前内容
+            grid.innerHTML = ''; // 清除当前内容
 
             const selectedCountry = document.getElementById('countrySelect').value;
             const selectedCategory = document.getElementById('categorySelect').value;
@@ -339,7 +339,7 @@
                 document.getElementById('supportModal').style.display = 'block';
             };
 
-            // 打开FAQ模态框
+            // 打开常见问题模态框
             document.getElementById('faqBtn').onclick = function() {
                 document.getElementById('faqModal').style.display = 'block';
             };
@@ -361,10 +361,28 @@
                 });
             };
 
-            // 打开PayPal链接
+            // 打开 PayPal 链接
             document.getElementById('paypalBtn').onclick = function() {
                 window.location.href = 'https://www.paypal.com/ncp/payment/QN7HEGCSRYJKA';
             };
+
+            // 每秒更改支持按钮颜色
+            const supportButton = document.getElementById('supportBtn');
+            let isGreenSupport = false;
+
+            setInterval(() => {
+                isGreenSupport = !isGreenSupport; // 切换颜色
+                supportButton.style.backgroundColor = isGreenSupport ? 'green' : '#007BFF'; // 更改颜色
+            }, 700);
+
+            // 每秒更改 PayPal 按钮颜色
+            const paypalButton = document.getElementById('paypalBtn');
+            let isGreenPaypal = false;
+
+            setInterval(() => {
+                isGreenPaypal = !isGreenPaypal; // 切换颜色
+                paypalButton.style.backgroundColor = isGreenPaypal ? 'green' : '#007BFF'; // 更改颜色
+            }, 10000);
         });
     </script>
 </head>
@@ -372,7 +390,7 @@
 
 <header>
     <a href="index.html" style="text-decoration: none;">
-        <h1 translate="no">GZ</h1>
+        <h1 translate="no">G-Z</h1>
     </a>
     <div class="copyright-icon">©️</div>
     <a href="Partage.html">
@@ -386,7 +404,7 @@
 
 <div class="button-container">
     <button id="faqBtn" class="button" aria-label="常见问题">
-        <i class="fas fa-question-circle" style="margin-right: 2px;"></i> 常见问题
+        <i class="fas fa-question-circle" style="margin-right: 2px;"></i> 问题
     </button>
     <button id="supportBtn" class="button" aria-label="支持" translate="no">
         <i class="fas fa-hand-holding-heart" style="margin-right: 5px;"></i> 支持
@@ -402,16 +420,16 @@
     </select>
 
     <select class="category-select" aria-label="选择类别" id="categorySelect">
-        <option value="daily">按日出生数</option>
-        <option value="monthly">按月出生数</option>
-        <option value="yearly">按年出生数</option>
+        <option value="daily">每日出生</option>
+        <option value="monthly">每月出生</option>
+        <option value="yearly">每年出生</option>
         <option value="gender">性别</option>
         <option value="age">年龄</option>
-        <option value="population">人口</option> <!-- 添加人口选项 -->
+        <option value="population">人口</option>
     </select>
 
     <div class="grid" id="grid">
-        <!-- 卡片将在这里生成 -->
+        <!-- 卡片将在此生成 -->
     </div>
 </div>
 
@@ -419,17 +437,18 @@
 <div id="supportModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>感谢您对G-Z的支持！每一份支持都是重要的。借助您的帮助，我们可以继续开发这个激动人心的项目，创造创新的分析，并为全球观众提供免费统计数据。</p>
-        <button id="paypalBtn" class="support-button">现在支持</button>
+        <p>感谢您支持 G-Z！每一份支持都很重要。借助您的帮助，我们可以继续开发这个激动人心的项目，创造创新的分析，并为全球观众提供免费的统计数据。</p>
+        <button id="paypalBtn" class="support-button">立即支持</button>
     </div>
 </div>
 
-<!-- FAQ模态框 -->
+<!-- 常见问题模态框 -->
 <div id="faqModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        统计数据会在每次提交到表格时自动更新。
+        统计数据会在每次表单提交时自动更新。
     </div>
 </div>
+
 </body>
 </html>
